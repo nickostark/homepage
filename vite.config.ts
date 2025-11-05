@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 
-const repoName = 'nickostark.github.io'
+const repoName = 'homepage'
 
 export default defineConfig({
   base: `/${repoName}/`,
