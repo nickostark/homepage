@@ -1,4 +1,4 @@
-import { X, Linkedin, Github, Mail } from 'lucide-react';
+import { X, Linkedin, Github, Mail, MessageSquare } from 'lucide-react';
 
 function App() {
   return (
@@ -61,8 +61,9 @@ function App() {
               <p className="text-xl font-semibold text-slate-900 mb-6">What I do At CogniStark</p>
             </div>
             <p className="text-lg text-slate-700 leading-relaxed">
-              Many businesses know they need AI, they just don't know where. That's why I've made it CogniStark's mission to help small and mid-sized businesses (SMBs) either find that out,
-              map out a solution and deploy it, or, find out what's not working in their current AI setups and fix it. There are two steps to this:
+              I help small and mid-sized businesses figure out where AI can actually make a
+              difference in their operations, whether that means finding the right solution and setting it
+              up, or fixing what’s not working in their current AI systems. There are 2 steps to this:
             </p>
 
             <div className="mt-10 flex flex-col items-center gap-4 text-slate-500">
@@ -163,6 +164,21 @@ function App() {
                 <div>
                   <div className="font-semibold text-slate-900">GitHub</div>
                   <div className="text-sm text-slate-600">Code and projects</div>
+                </div>
+              </a>
+
+              <a
+                href="https://senja.io/p/nickostark/y6CFdg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-4 p-4 rounded-xl border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all group md:col-span-2 text-center"
+              >
+                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-slate-200 transition-colors">
+                  <MessageSquare className="w-6 h-6 text-slate-700" />
+                </div>
+                <div className="text-center">
+                  <div className="font-semibold text-slate-900">What People Are Saying</div>
+                  <div className="text-sm text-slate-600">Testimonials & reviews</div>
                 </div>
               </a>
             </div>
