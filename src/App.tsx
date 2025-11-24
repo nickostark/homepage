@@ -172,99 +172,87 @@ function App() {
             </div>
           </section>
 
-          <section className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-200">
-            
-            <div className="flex items-center justify-center gap-2 text-xs font-medium tracking-[0.2em] text-slate-400">
-                <p className="text-xl font-normal text-slate-900 mb-6">Connect with me/Follow my work</p>
-            </div>
+          <section className="relative overflow-hidden rounded-3xl border border-slate-900/15 bg-gradient-to-br from-slate-900 via-slate-800 to-[#2c1424] p-6 md:p-8 shadow-inner text-slate-50">
+            <div
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(255,255,255,0.08),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(255,255,255,0.06),transparent_30%)]"
+              aria-hidden
+            />
+            <div className="relative space-y-5">
+              <div className="flex items-center justify-center gap-2 text-xs font-medium tracking-[0.2em] text-slate-200">
+                <p className="text-xl font-normal text-slate-50">Resources & Links</p>
+              </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
-              <a
-                href="https://nickostark.substack.com"
-                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 hover:border-slate-400 hover:shadow-md transition-all group">
-                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-[#fbde9c]/80 transition-colors">
-                  <Mail className="w-6 h-6 text-slate-700" />
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <p className="text-xs uppercase tracking-[0.12em] text-slate-200 text-center md:text-left">Work with me</p>
+                  <div className="grid gap-2 md:grid-cols-2">
+                    <a href="https://calendly.com/cognistark/20min" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
+                    <div className="text-sm font-normal">20-min Free Intro Call</div> <span className="text-xs text-slate-200/80">(AI Audit)</span>
+                    </a>
+                    <a href="https://senja.io/p/nickostark/y6CFdg" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
+                      <MessageSquare className="w-4 h-4 text-slate-100" />
+                      <div className="text-sm font-normal">Testimonials</div>
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-normal text-slate-900">Newsletter (Substack)</div>
-                  <div className="text-sm text-slate-600">Publish at most 2x a month</div>
-                </div>
-              </a>
 
-              <a
-                href="https://x.com/CogniStark"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 hover:border-slate-400 hover:shadow-md transition-all group"
-              >
-                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-[#fbde9c]/80 transition-colors">
-                  <X className="w-6 h-6 text-slate-700" />
+                <div className="space-y-2">
+                  <p className="text-xs uppercase tracking-[0.12em] text-slate-200 text-center md:text-left">Social - Writing - Code</p>
+                  <div className="grid gap-2 md:grid-cols-2">
+                    <div className="flex flex-col gap-2">
+                      <a href="https://x.com/CogniStark" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-xs text-slate-50 hover:border-white/30 hover:shadow transition">
+                        <X className="w-4 h-4 text-slate-100" />
+                        <span className="font-normal text-sm text-slate-50">𝕏/Twitter</span>
+                      </a>
+                      <a href="https://www.linkedin.com/in/nicko-stark-37a688394" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-xs text-slate-50 hover:border-white/30 hover:shadow transition">
+                        <Linkedin className="w-4 h-4 text-slate-100" />
+                        <span className="font-normal text-sm text-slate-50">LinkedIn</span>
+                      </a>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <a href="https://nickostark.substack.com" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-xs text-slate-50 hover:border-white/30 hover:shadow transition">
+                        <Mail className="w-4 h-4 text-slate-100" />
+                        <span className="font-normal text-sm text-slate-50">Newsletter</span>
+                      </a>
+                      <a href="https://github.com/nickostark" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-xs text-slate-50 hover:border-white/30 hover:shadow transition">
+                        <Github className="w-4 h-4 text-slate-100" />
+                        <span className="font-normal text-sm text-slate-50">GitHub</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-normal text-slate-900">X (Twitter)</div>
-                  <div className="text-sm text-slate-600">Daily thoughts and updates</div>
-                </div>
-              </a>
 
-              <a
-                href="https://www.linkedin.com/in/nicko-stark-37a688394"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 hover:border-slate-400 hover:shadow-md transition-all group"
-              >
-                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-[#fbde9c]/80 transition-colors">
-                  <Linkedin className="w-6 h-6 text-slate-700" />
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <p className="text-xs uppercase tracking-[0.12em] text-slate-200 text-center md:text-left">Apps</p>
+                    <div className="grid gap-2">
+                      <a href="https://huggingface.co/spaces/nickostark/xdash" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
+                        <div className="text-sm font-normal">
+                          𝕏Dash <span className="text-xs text-slate-200/80">(𝕏 Analytics Interactive Dashboard)</span>
+                        </div>
+                      </a>
+                      <a href="#" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
+                        StarkScan <span className="text-xs text-slate-200/80">(Coming soon...)</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-xs uppercase tracking-[0.12em] text-slate-200 text-center md:text-left">Playbooks</p>
+                    <div className="grid gap-2">
+                      <a href="https://sage-party-f46.notion.site/Welcome-d156d6d997544fee9b7b97c250be62a3" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
+                        <div className="text-sm font-normal">
+                          SANE <span className="text-xs text-slate-200/80">(AI Response Verification Prompts)</span>
+                        </div>
+                      </a>
+                      <a href="#" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
+                        <div className="text-sm font-normal">
+                          XFactor <span className="text-xs text-slate-200/80">(Playbook)</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-normal text-slate-900">LinkedIn</div>
-                  <div className="text-sm text-slate-600">Professional network</div>
-                </div>
-              </a>
-
-              <a
-                href="https://github.com/nickostark"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 hover:border-slate-400 hover:shadow-md transition-all group"
-              >
-                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-[#fbde9c]/80 transition-colors">
-                  <Github className="w-6 h-6 text-slate-700" />
-                </div>
-                <div>
-                  <div className="font-normal text-slate-900">GitHub</div>
-                  <div className="text-sm text-slate-600">Code and projects</div>
-                </div>
-              </a>
-
-              <a
-                href="https://senja.io/p/nickostark/y6CFdg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 hover:border-slate-400 hover:shadow-md transition-all group"
-              >
-                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-[#fbde9c]/80 transition-colors">
-                  <MessageSquare className="w-6 h-6 text-slate-700" />
-                </div>
-                <div>
-                  <div className="font-normal text-slate-900">What People Are Saying</div>
-                  <div className="text-sm text-slate-600">Testimonials & reviews</div>
-                </div>
-              </a>
-
-              <a
-                href="https://huggingface.co/nickostark"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 hover:border-slate-400 hover:shadow-md transition-all group"
-              >
-                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-[#fbde9c]/80 transition-colors">
-                  <Sparkles className="w-6 h-6 text-slate-700" />
-                </div>
-                <div>
-                  <div className="font-normal text-slate-900">Hugging Face</div>
-                  <div className="text-sm text-slate-600">Models, demos, and spaces</div>
-                </div>
-              </a>
+              </div>
             </div>
           </section>
 
@@ -281,7 +269,7 @@ function App() {
         </main>
 
         <footer className="mt-16 text-center text-slate-500 text-sm">
-          <p>© 2025 CogniStark. Building bridges between AI and business.</p>
+          <p>© 2025 CogniStark. This page’s code is open-sourced on my GitHub.</p>
         </footer>
       </div>
     </div>
