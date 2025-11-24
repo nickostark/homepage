@@ -2,151 +2,191 @@ import { X, Linkedin, Github, Mail, MessageSquare, Sparkles } from 'lucide-react
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div
+      className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100"
+      style={{ fontFamily: "'Helvetica Neue'" }}
+    >
       <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
 
         <header className="text-center mb-20">
-          <div className="-mx-6 mb-10 bg-slate-200 px-6 py-6 shadow-sm">
+        <div className="-mx-6 mb-10 bg-slate-200 px-6 py-6 shadow-sm">
             <h1 className="text-6xl md:text-5xl font-bold text-slate-700 tracking-tight">
               CogniStark
             </h1>
-            <p className="mt-2 text-sm font-medium uppercase tracking-[0.3em] text-slate-600">
-              Nicko Stark
-            </p>
           </div>
-          <div className="mx-auto mb-12 grid gap-6 text-left md:grid-cols-1">
-            <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-slate-100 p-8 md:p-10 shadow-lg ring-1 ring-slate-100 md:flex md:items-center md:justify-between md:gap-10">
-              <div className="space-y-4 md:max-w-xl">
-                <div className="flex items-start gap-4">
-                  <span className="mt-1 h-12 w-1 rounded-full bg-[#800020]" aria-hidden />
-                  <p className="text-2xl md:text-3xl font-semibold text-slate-900 leading-tight uppercase tracking-[0.05em]">
-                    How much is inefficiency costing you per month?
+          <div className="relative overflow-hidden rounded-3xl border border-slate-900/10 bg-gradient-to-br from-slate-900 via-slate-800 to-[#3c0c1d] px-8 py-10 shadow-2xl ring-1 ring-white/10">
+            <div
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(255,255,255,0.14),transparent_32%),radial-gradient(circle_at_82%_8%,rgba(255,255,255,0.08),transparent_28%)]"
+              aria-hidden
+            />
+            <div className="relative space-y-8 text-center">
+              <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-normal tracking-[0.3em] text-slate-100 shadow-sm backdrop-blur-sm -mt-2 md:-mt-1 self-center text-center">
+                <span className="h-2 w-2 rounded-full bg-[#fbde9c]" />
+                Hi, I&apos;m Nicko. Welcome to CogniStark!
+              </div>
+              <div className="grid gap-6 md:grid-cols-[2fr_1fr] md:items-center">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-inner backdrop-blur-sm text-left space-y-4">
+                  <div className="relative pl-5">
+                    <span className="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-[#fbde9c]" aria-hidden />
+                    <p className="text-2xl md:text-3xl font-[350] text-white leading-tight tracking-[0.03em] [word-spacing:0.02em] ">
+                      Do you want to know how much inefficiency is costing you per month?
+                    </p>
+                  </div>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-[#fbde9c]/90 p-6 text-slate-900 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl text-center">
+                  <p className="text-sm font-normal uppercase tracking-[0.25em] text-slate-800">
+                    {/* Quick diagnostic */}
+                  </p>
+                  <p className="mt-2 text-lg font-normal leading-snug">
+                    Get an estimate in 2-3 minutes.
+                  </p>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-center text-sm font-normal uppercase tracking-[0.2em] text-white shadow-sm transition hover:bg-[#800020]"
+                  >
+                    QUICK DIAGNOSTIC
+                  </a>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.2em] text-slate-800/80">
+                    (coming soon...)
                   </p>
                 </div>
-                <div className="flex gap-3">
-                  <span className="h-1 flex-1 rounded-full bg-slate-200" aria-hidden />
-                  <span className="h-1 w-10 rounded-full bg-slate-300" aria-hidden />
-                </div>
-                {/* <p className="text-sm text-slate-600 leading-relaxed">
-                  Get a ballpark of the resources you lose each month to unnoticed workflow drag
-                </p> */}
-              </div>
-              <div className="mt-6 flex items-center justify-center md:mt-0 md:min-w-[220px]">
-                <a
-                  href="https://calendly.com/cognistark/20min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#800020] px-6 py-5 text-center text-l font-semibold uppercase tracking-[0.2em] text-white shadow-sm transition hover:bg-slate-700">
-                  Get an estimate
-                </a>
               </div>
             </div>
-            {/* <div className="rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-sm">
-              <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
-                Subscribe to my newsletter
-              </p>
-              <a
-                href="https://nickostark.substack.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-sm transition hover:bg-[#660019]"
-              >
-                Subscribe
-              </a>
-            </div> */}
           </div>
 
         </header>
 
         <main className="space-y-16">
-          <section className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-200">
+          <section className="rounded-2xl">
             
             <div className="flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.4em] text-slate-400">
-              <p className="text-xl font-semibold text-slate-900 mb-6">What I do At CogniStark</p>
+              <p className="text-xl font-normal text-slate-900 mb-3">What I do At CogniStark</p>
             </div>
-            <p className="text-lg text-slate-700 leading-relaxed">
-              I help small and mid-sized businesses figure out where AI can actually make a
-              difference in their operations, whether that means finding the right solution and setting it
-              up, or fixing what’s not working in their current AI systems. There are 2 steps to this:
-            </p>
-
-            <div className="mt-10 flex flex-col items-center gap-4 text-slate-500">
-              <div className="inline-flex items-center gap-3 rounded-full bg-slate-100 px-4 py-2 text-slate-700 shadow-sm">
-                <span className="h-2 w-2 rounded-full bg-[#800020]" aria-hidden />
-                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-800">
-                  Discover
-                </span>
-                <span className="text-sm md:text-base font-medium text-slate-700">
-                  Identify AI-shaped gaps
-                </span>
-              </div>
-              <div className="flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.4em] text-slate-400">
-                <span className="h-px w-16 bg-slate-200" />
-                ↓↓↓↓↓↓
-                <span className="h-px w-16 bg-slate-200" />
-              </div>
-              <div className="inline-flex items-center gap-3 rounded-full bg-slate-100 px-4 py-2 text-slate-700 shadow-sm">
-                <span className="h-2 w-2 rounded-full bg-[#800020]" aria-hidden />
-                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-800">
-                  Build
-                </span>
-                <span className="text-sm md:text-base font-medium text-slate-700">
-                  Prototype → Deploy → Maintain
-                </span>
+            <div className="relative mt-2 overflow-hidden rounded-2xl border border-slate-900/10 bg-gradient-to-br from-slate-900 via-slate-800 to-[#4a0012] p-6 md:p-8 text-slate-50 shadow-inner">
+              <div
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.12),transparent_34%),radial-gradient(circle_at_82%_0%,rgba(255,255,255,0.1),transparent_30%)]"
+                aria-hidden
+              />
+              <div className="relative space-y-6">
+                <p className="text-sm md:text-base font-normal tracking-[0.18em] text-slate-100 text-center">
+                  I help founders answer three questions
+                </p>
+                <div className="grid gap-3 md:grid-cols-3">
+                  <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 shadow-sm backdrop-blur-sm">
+                    <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-[#f59f85]" aria-hidden />
+                    <p className="text-sm md:text-base font-normal leading-snug">
+                      Where&apos;s my time and money being wasted?
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 shadow-sm backdrop-blur-sm">
+                    <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-[#fbde9c]" aria-hidden />
+                    <p className="text-sm md:text-base font-normal leading-snug">
+                      Can my team do less manual repetitive work?
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 shadow-sm backdrop-blur-sm">
+                    <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-[#b2f5ea]" aria-hidden />
+                    <p className="text-sm md:text-base font-normal leading-snug">
+                      Is there a practical way to fix it, and does AI help?
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 text-sm md:text-base font-normal tracking-[0.18em] text-slate-100 text-center">
+                  <span className="h-px flex-1 bg-white/10" />
+                  then we turn this into a 2-step sprint
+                  <span className="h-px flex-1 bg-white/10" />
+                </div>
+                <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 text-slate-50 shadow-inner">
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_20%,rgba(255,255,255,0.06),transparent_30%),radial-gradient(circle_at_92%_24%,rgba(255,255,255,0.08),transparent_28%)]"
+                    aria-hidden
+                  />
+                  <div className="relative flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 md:w-[42%] text-center md:items-center">
+                      <span className="flex h-10 px-4 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-[10px] font-normal uppercase tracking-[0.26em] text-slate-50 shadow-sm">
+                        Discover
+                      </span>
+                      <p className="text-sm md:text-base font-normal text-slate-100/90 leading-snug text-center">
+                        Identify AI-shaped gaps
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2 self-center text-slate-100">
+                      <span className="h-px w-10 bg-white/25 md:w-12" />
+                      <span className="text-lg font-normal">→</span>
+                      <span className="h-px w-10 bg-white/25 md:w-12" />
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 md:w-[42%] text-center md:items-center">
+                      <span className="flex h-10 px-4 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-[10px] font-normal uppercase tracking-[0.26em] text-slate-50 shadow-sm">
+                        Build
+                      </span>
+                      <p className="text-sm md:text-base font-normal text-slate-100/90 leading-snug text-center">
+                        Prototype → Deploy → Maintain
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
 
-          <section className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-200">
+          <section className="rounded-2xl">
           
             <div className="flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.4em] text-slate-400">
-              <p className="text-xl font-semibold text-slate-900 mb-6">What I Write in CogniStark</p>
+              <p className="text-xl font-normal text-slate-900 mb-6">What I Write in CogniStark</p>
             </div>
-            <div className="mx-auto max-w-2xl text-center space-y-4">
-              <p className="text-lg text-slate-800 leading-relaxed font-semibold">
-                How we should think with AI, not through it.
-              </p>
-              <p className="text-base text-slate-600 leading-relaxed">
-                Get bi-weekly breakdowns on AI, automation, and critical thinking
-              </p>
-              <div className="flex items-center justify-center gap-3 text-xs uppercase tracking-[0.25em] text-[#800020] font-semibold">
-                <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-slate-700 shadow-sm">
-                  <span className="h-2 w-2 rounded-full bg-[#800020]" />
-                  Actionable
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-slate-700 shadow-sm">
-                  <span className="h-2 w-2 rounded-full bg-[#800020]" />
-                  2x a month
-                </span>
+            <div className="relative overflow-hidden rounded-2xl border border-slate-900/10 bg-gradient-to-br from-slate-900 via-slate-800 to-[#2a0a18] p-8 md:p-10 text-slate-50 shadow-inner">
+              <div
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_12%,rgba(255,255,255,0.12),transparent_32%),radial-gradient(circle_at_80%_8%,rgba(255,255,255,0.08),transparent_30%)]"
+                aria-hidden
+              />
+              <div className="relative mx-auto max-w-2xl text-center space-y-5">
+                <p className="text-2xl md:text-3xl font-normal leading-snug">
+                  How we should think with AI, not through it.
+                </p>
+                <p className="text-base text-slate-200/90 leading-relaxed">
+                  Bi-weekly breakdowns on AI, automation, and practical critical thinking.
+                </p>
+                <div className="flex items-center justify-center gap-3 text-xs uppercase tracking-[0.25em] font-normal">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-slate-100 shadow-sm">
+                    <span className="h-2 w-2 rounded-full bg-[#fbde9c]" />
+                    Actionable
+                  </span>
+                  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-slate-100 shadow-sm">
+                    <span className="h-2 w-2 rounded-full bg-[#b2f5ea]" />
+                    2x a month
+                  </span>
+                </div>
+                <div className="pt-4">
+                  <a
+                    href="https://nickostark.substack.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-xl bg-[#fbde9c] px-6 py-4 text-center text-sm font-normal uppercase tracking-[0.2em] text-slate-900 shadow-md transition hover:-translate-y-0.5 hover:bg-white"
+                  >
+                    Subscribe
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className="mt-10 flex justify-center">
-              <a
-                href="https://nickostark.substack.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-[#800020] px-6 py-5 text-center text-l font-semibold uppercase tracking-[0.2em] text-white shadow-sm transition hover:bg-slate-700"
-              >
-                Subscribe
-              </a>
             </div>
           </section>
 
           <section className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-200">
             
             <div className="flex items-center justify-center gap-2 text-xs font-medium tracking-[0.2em] text-slate-400">
-                <p className="text-xl font-semibold text-slate-900 mb-6">Connect with me/Follow my work</p>
+                <p className="text-xl font-normal text-slate-900 mb-6">Connect with me/Follow my work</p>
             </div>
 
             <div className="grid gap-4 md:grid-cols-2">
               <a
                 href="https://nickostark.substack.com"
-                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all group">
-                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-slate-200 transition-colors">
+                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 hover:border-slate-400 hover:shadow-md transition-all group">
+                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-[#fbde9c]/80 transition-colors">
                   <Mail className="w-6 h-6 text-slate-700" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-900">Newsletter (Substack)</div>
+                  <div className="font-normal text-slate-900">Newsletter (Substack)</div>
                   <div className="text-sm text-slate-600">Publish at most 2x a month</div>
                 </div>
               </a>
@@ -155,13 +195,13 @@ function App() {
                 href="https://x.com/CogniStark"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all group"
+                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 hover:border-slate-400 hover:shadow-md transition-all group"
               >
-                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-slate-200 transition-colors">
+                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-[#fbde9c]/80 transition-colors">
                   <X className="w-6 h-6 text-slate-700" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-900">X (Twitter)</div>
+                  <div className="font-normal text-slate-900">X (Twitter)</div>
                   <div className="text-sm text-slate-600">Daily thoughts and updates</div>
                 </div>
               </a>
@@ -170,13 +210,13 @@ function App() {
                 href="https://www.linkedin.com/in/nicko-stark-37a688394"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all group"
+                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 hover:border-slate-400 hover:shadow-md transition-all group"
               >
-                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-slate-200 transition-colors">
+                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-[#fbde9c]/80 transition-colors">
                   <Linkedin className="w-6 h-6 text-slate-700" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-900">LinkedIn</div>
+                  <div className="font-normal text-slate-900">LinkedIn</div>
                   <div className="text-sm text-slate-600">Professional network</div>
                 </div>
               </a>
@@ -185,13 +225,13 @@ function App() {
                 href="https://github.com/nickostark"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all group"
+                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 hover:border-slate-400 hover:shadow-md transition-all group"
               >
-                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-slate-200 transition-colors">
+                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-[#fbde9c]/80 transition-colors">
                   <Github className="w-6 h-6 text-slate-700" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-900">GitHub</div>
+                  <div className="font-normal text-slate-900">GitHub</div>
                   <div className="text-sm text-slate-600">Code and projects</div>
                 </div>
               </a>
@@ -200,13 +240,13 @@ function App() {
                 href="https://senja.io/p/nickostark/y6CFdg"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all group"
+                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 hover:border-slate-400 hover:shadow-md transition-all group"
               >
-                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-slate-200 transition-colors">
+                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-[#fbde9c]/80 transition-colors">
                   <MessageSquare className="w-6 h-6 text-slate-700" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-900">What People Are Saying</div>
+                  <div className="font-normal text-slate-900">What People Are Saying</div>
                   <div className="text-sm text-slate-600">Testimonials & reviews</div>
                 </div>
               </a>
@@ -215,13 +255,13 @@ function App() {
                 href="https://huggingface.co/nickostark"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 hover:border-slate-400 hover:shadow-md transition-all group"
+                className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 hover:border-slate-400 hover:shadow-md transition-all group"
               >
-                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-slate-200 transition-colors">
+                <div className="p-3 bg-slate-100 rounded-lg group-hover:bg-[#fbde9c]/80 transition-colors">
                   <Sparkles className="w-6 h-6 text-slate-700" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-900">Hugging Face</div>
+                  <div className="font-normal text-slate-900">Hugging Face</div>
                   <div className="text-sm text-slate-600">Models, demos, and spaces</div>
                 </div>
               </a>
@@ -231,7 +271,7 @@ function App() {
           {/* <section className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-200">
             
             <div className="flex items-center justify-center gap-2 text-xs font-medium tracking-[0.1em] text-slate-400">
-                  <p className="text-xl font-semibold text-slate-900 mb-6">A bit about me</p>
+                  <p className="text-xl font-normal text-slate-900 mb-6">A bit about me</p>
             </div>
 
             <p className="text-lg text-slate-700 leading-relaxed">
