@@ -190,7 +190,7 @@ function App() {
                 <div className="space-y-2">
                   <p className="text-xs uppercase tracking-[0.12em] text-slate-200 text-center md:text-left">Work with me</p>
                   <div className="grid gap-2 md:grid-cols-2">
-                    <a href="https://calendly.com/cognistark/20min" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
+                    <a href="https://cal.com/cognistark/20min-call" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
                     <div className="text-sm font-normal">Free Intro Call</div> <span className="text-xs text-slate-200/80">(AI Opportunity assessment)</span>
                     </a>
                     <a href="https://senja.io/p/nickostark/y6CFdg" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
