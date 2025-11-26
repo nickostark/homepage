@@ -61,8 +61,9 @@ function App() {
         <main className="space-y-16">
           <section className="rounded-2xl">
             
-            <div className="flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.4em] text-slate-400">
+            <div className="flex flex-col items-center justify-center gap-1 text-xs font-medium uppercase tracking-[0.4em] text-slate-400">
               <p className="text-xl font-normal text-slate-900 mb-3">What I do At CogniStark</p>
+              <p className="text-sm font-normal text-slate-600 tracking-[0.2em] uppercase">AI Opportunity assessment</p>
             </div>
             <div className="relative mt-2 overflow-hidden rounded-2xl border border-slate-900/10 bg-gradient-to-br from-slate-900 via-slate-800 to-[#4a0012] p-6 md:p-8 text-slate-50 shadow-inner">
               <div
@@ -187,7 +188,7 @@ function App() {
                   <p className="text-xs uppercase tracking-[0.12em] text-slate-200 text-center md:text-left">Work with me</p>
                   <div className="grid gap-2 md:grid-cols-2">
                     <a href="https://calendly.com/cognistark/20min" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
-                    <div className="text-sm font-normal">20-min Free Intro Call</div> <span className="text-xs text-slate-200/80">(AI Audit)</span>
+                    <div className="text-sm font-normal">Free Intro Call</div> <span className="text-xs text-slate-200/80">(AI Opportunity assessment)</span>
                     </a>
                     <a href="https://senja.io/p/nickostark/y6CFdg" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
                       <MessageSquare className="w-4 h-4 text-slate-100" />
