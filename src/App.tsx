@@ -4,7 +4,7 @@ function App() {
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100"
-      style={{ fontFamily: "'Helvetica Neue'" }}
+      style={{ fontFamily: "'Gill Sans'" }}
     >
       <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
 
@@ -74,8 +74,8 @@ function App() {
                 aria-hidden
               />
               <div className="relative space-y-6">
-                <p className="text-sm md:text-base font-normal tracking-[0.18em] text-slate-100 text-center">
-                  I help founders answer three questions
+                <p className="text-base md:text-lg font-normal tracking-[0.18em] text-slate-100 text-center">
+                  I help founders answer three questions 
                 </p>
                 <div className="grid gap-3 md:grid-cols-3">
                   <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 shadow-sm backdrop-blur-sm">
@@ -99,10 +99,10 @@ function App() {
                 </div>
                 <div className="flex items-center gap-3 text-sm md:text-base font-normal tracking-[0.18em] text-slate-100 text-center">
                   <span className="h-px flex-1 bg-white/10" />
-                  then we turn this into a 2-step sprint
+                  without introducing new inefficiencies, and based on their operations data
                   <span className="h-px flex-1 bg-white/10" />
                 </div>
-                <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 text-slate-50 shadow-inner">
+                {/* <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 text-slate-50 shadow-inner">
                   <div
                     className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_20%,rgba(255,255,255,0.06),transparent_30%),radial-gradient(circle_at_92%_24%,rgba(255,255,255,0.08),transparent_28%)]"
                     aria-hidden
@@ -130,7 +130,7 @@ function App() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </section>
@@ -149,7 +149,7 @@ function App() {
                 <p className="text-2xl md:text-3xl font-normal leading-snug">
                   How we should think with AI, not through it.
                 </p>
-                <p className="text-base text-slate-200/90 leading-relaxed">
+                <p className="text-lg text-slate-200/90 leading-relaxed">
                   Bi-weekly breakdowns on AI, automation, and practical critical thinking.
                 </p>
                 <div className="flex items-center justify-center gap-3 text-xs uppercase tracking-[0.25em] font-normal">
