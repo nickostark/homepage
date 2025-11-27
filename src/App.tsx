@@ -113,7 +113,7 @@ function App() {
                     {[
                       { title: 'Assess Current State', note: 'Record a baseline' },
                       { title: 'Quantify Impact', note: 'Cost of inaction/inefficiencies' },
-                      { title: 'Identify AI opportunities', note: 'AI-shaped gaps + ROI validation' },
+                      { title: 'Identify AI opportunities', note: 'AI-shaped gaps + estimate projected ROI' },
                       { title: 'Deliver solutions', note: 'Recommendations → POC → Deployment → Comparison to baseline' },
                     ].map((step, index) => (
                       <div
