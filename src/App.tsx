@@ -44,16 +44,16 @@ function App() {
                     Get an estimate in 2-3 minutes.
                   </p>
                   <a
-                    href="#"
+                    href="https://starkscan.cognistark.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-6 inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-center text-sm font-normal uppercase tracking-[0.2em] text-white shadow-sm transition hover:bg-[#800020]"
                   >
                     QUICK DIAGNOSTIC
                   </a>
-                  <p className="mt-2 text-[10px] uppercase tracking-[0.2em] text-slate-800/80">
+                  {/* <p className="mt-2 text-[10px] uppercase tracking-[0.2em] text-slate-800/80">
                     (coming soon...)
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -239,8 +239,9 @@ function App() {
                           𝕏Dash <span className="text-xs text-slate-200/80">(𝕏 Analytics Interactive Dashboard)</span>
                         </div>
                       </a>
-                      <a href="#" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
-                        StarkScan <span className="text-xs text-slate-200/80">(Coming soon...)</span>
+                      <a href="https://starkscan.cognistark.com" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
+                        StarkScan
+                        {/* <span className="text-xs text-slate-200/80">(Coming soon...)</span> */}
                       </a>
                     </div>
                   </div>
