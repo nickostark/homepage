@@ -1,6 +1,32 @@
+import { useState } from 'react';
 import { X, Linkedin, Github, Mail, MessageSquare } from 'lucide-react';
 
+type SectionKey = 'workWithMe' | 'social' | 'apps' | 'resources';
+
+const steps = [
+  { title: 'Data Review', note: 'We map your processes and record a baseline' },
+  { title: 'Quantify Impact', note: 'We estimate the cost of inaction/inefficiencies' },
+  {
+    title: 'Identify AI opportunities',
+    note: 'We recommend cost-saving AI solutions + implementation roadmap + projected ROI',
+  },
+  {
+    title: 'Validation & Implementation',
+    note: 'We validate the optimal solution and proceed with implementation.',
+  },
+];
+
 function App() {
+  const [activeSection, setActiveSection] = useState<SectionKey>('workWithMe');
+  const [flippedSteps, setFlippedSteps] = useState<Record<number, boolean>>({});
+
+  const toggleStep = (index: number) => {
+    setFlippedSteps((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100"
@@ -65,7 +91,7 @@ function App() {
           <section className="rounded-2xl">
             
             <div className="flex flex-col items-center justify-center gap-1 text-xs font-medium uppercase tracking-[0.4em] text-slate-400">
-              <p className="text-xl font-normal text-slate-900 mb-3">What I do At CogniStark</p>
+              <p className="text-xl font-normal text-slate-900 mb-3">Services</p>
               <p className="text-sm font-normal text-slate-600 tracking-[0.2em] uppercase">AI Opportunity assessment</p>
             </div>
             <div className="relative mt-2 overflow-hidden rounded-2xl border border-slate-900/10 bg-gradient-to-br from-slate-900 via-slate-800 to-[#4a0012] p-6 md:p-8 text-slate-50 shadow-inner">
@@ -103,36 +129,50 @@ function App() {
                   <span className="h-px flex-1 bg-white/10" />
                 </div>
 
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-5 shadow-inner backdrop-blur-sm">
-                  <div className="flex items-center justify-center gap-2 text-[15px] font-semibold uppercase tracking-[0.22em] text-slate-200 mb-3">
+                <div className="rounded-2xl border border-white/15 bg-gradient-to-br from-white/[0.08] via-white/[0.05] to-white/[0.02] p-2 md:p-3 shadow-inner backdrop-blur-sm">
+                  <div className="flex items-center justify-center gap-2 text-[12px] md:text-[13px] font-semibold uppercase tracking-[0.18em] text-slate-200 mb-1.5">
                     <span className="h-px w-10 bg-white/20" />
                     Steps taken
                     <span className="h-px w-10 bg-white/20" />
                   </div>
-                  <div className="grid gap-3 md:grid-cols-2">
-                    {[
-                      { title: 'Assess Current State', note: 'Record a baseline' },
-                      { title: 'Quantify Impact', note: 'Cost of inaction/inefficiencies' },
-                      { title: 'Identify AI opportunities', note: 'AI-shaped gaps + projected ROI' },
-                      { title: 'Deliver solutions', note: 'Recommendations → POC → Deployment → Comparison to baseline' },
-                    ].map((step, index) => (
-                      <div
+                  <div className="grid gap-1 md:grid-cols-2">
+                    {steps.map((step, index) => {
+                      const isFlipped = !!flippedSteps[index];
+                      return (
+                      <button
                         key={step.title}
-                        className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 shadow-sm"
+                        type="button"
+                        aria-pressed={isFlipped}
+                        onClick={() => toggleStep(index)}
+                        className="relative min-h-[80px] w-[90%] md:w-[98%] mx-auto rounded-xl text-left [perspective:1200px] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fbde9c]/60"
                       >
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-sm font-semibold text-[#fbde9c]">
-                          {index + 1}
-                        </span>
-                        <div className="space-y-1">
-                          <p className="text-sm md:text-base font-semibold text-slate-50 leading-tight">
-                            {step.title}
-                          </p>
-                          <p className="text-xs md:text-sm text-slate-200/80 leading-snug">
-                            {step.note}
-                          </p>
+                        <div
+                          className={`relative h-full w-full transition-transform duration-500 motion-reduce:transition-none [transform-style:preserve-3d] ${
+                            isFlipped ? '[transform:rotateY(180deg)]' : ''
+                          }`}
+                        >
+                          <div className="absolute inset-0 flex items-start gap-3 rounded-xl border border-white/15 bg-gradient-to-br from-white/[0.1] to-white/[0.02] px-3 py-1.5 shadow-sm [backface-visibility:hidden]">
+                            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-sm font-semibold text-[#fbde9c]">
+                              {index + 1}
+                            </span>
+                            <div className="space-y-1.5">
+                              <p className="text-base md:text-lg font-medium text-slate-50 leading-tight tracking-[0.08em]">
+                                {step.title}
+                              </p>
+                              <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-slate-200/70">
+                                Tap to flip
+                              </p>
+                            </div>
+                          </div>
+                          <div className="absolute inset-0 flex items-center rounded-xl border border-white/15 bg-gradient-to-br from-white/[0.1] to-white/[0.02] px-3 py-1.5 shadow-sm [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                            <p className="text-base md:text-lg text-slate-100/90 leading-snug">
+                              {step.note}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      </button>
+                    );
+                    })}
                   </div>
                 </div>
               </div>
@@ -141,9 +181,9 @@ function App() {
 
           <section className="rounded-2xl">
           
-            <div className="flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.4em] text-slate-400">
-              <p className="text-xl font-normal text-slate-900 mb-6">What I Write in CogniStark</p>
-            </div>
+            {/* <div className="flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.4em] text-slate-400">
+              <p className="text-xl font-normal text-slate-900 mb-6">CogniStark NEWSLETTER</p>
+            </div> */}
             <div className="relative overflow-hidden rounded-2xl border border-slate-900/10 bg-gradient-to-br from-slate-900 via-slate-800 to-[#2a0a18] p-8 md:p-10 text-slate-50 shadow-inner">
               <div
                 className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_12%,rgba(255,255,255,0.12),transparent_32%),radial-gradient(circle_at_80%_8%,rgba(255,255,255,0.08),transparent_30%)]"
@@ -151,12 +191,12 @@ function App() {
               />
               <div className="relative mx-auto max-w-2xl text-center space-y-5">
                 <p className="text-2xl md:text-3xl font-normal leading-snug">
-                  How we should think with AI, not through it.
+                AI Beyond Tools
                 </p>
                 <p className="text-lg text-slate-200/90 leading-relaxed">
-                  Bi-weekly breakdowns on AI, automation, and practical critical thinking.
+                  Get bi-weekly breakdowns on AI in business operations and practical critical thinking.
                 </p>
-                <div className="flex items-center justify-center gap-3 text-xs uppercase tracking-[0.25em] font-normal">
+                {/* <div className="flex items-center justify-center gap-3 text-xs uppercase tracking-[0.25em] font-normal">
                   <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-slate-100 shadow-sm">
                     <span className="h-2 w-2 rounded-full bg-[#fbde9c]" />
                     Actionable
@@ -165,7 +205,7 @@ function App() {
                     <span className="h-2 w-2 rounded-full bg-[#b2f5ea]" />
                     2x a month
                   </span>
-                </div>
+                </div> */}
                 <div className="pt-4">
                   <a
                     href="https://nickostark.substack.com"
@@ -191,75 +231,144 @@ function App() {
               </div>
 
               <div className="space-y-4">
-                <div className="space-y-2">
-                  <p className="text-xs uppercase tracking-[0.12em] text-slate-200 text-center md:text-left">Work with me</p>
-                  <div className="grid gap-2 md:grid-cols-2">
-                    <a href="https://cal.com/cognistark/20min-call" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
-                    <div className="text-sm font-normal">Free Intro Call</div> <span className="text-xs text-slate-200/80">(AI Opportunity assessment)</span>
-                    </a>
-                    <a href="https://senja.io/p/nickostark/y6CFdg" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
-                      <MessageSquare className="w-4 h-4 text-slate-100" />
-                      <div className="text-sm font-normal">Testimonials</div>
-                    </a>
-                  </div>
+                <div
+                  className="grid gap-2 md:grid-cols-4"
+                  role="tablist"
+                  aria-label="Resources and links"
+                >
+                  {([
+                    { key: 'workWithMe', label: 'WORK WITH ME' },
+                    { key: 'social', label: 'FOLLOW MY WORK' },
+                    { key: 'apps', label: 'APPS' },
+                    { key: 'resources', label: 'FREE RESOURCES' },
+                  ] as const).map((item) => (
+                    <button
+                      key={item.key}
+                      type="button"
+                      role="tab"
+                      aria-selected={activeSection === item.key}
+                      aria-controls="resources-panel"
+                      id={`${item.key}-tab`}
+                      tabIndex={activeSection === item.key ? 0 : -1}
+                      onClick={() => setActiveSection(item.key)}
+                      className={`rounded-lg px-3 py-2 text-xs uppercase tracking-[0.12em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fbde9c]/60 ${
+                        activeSection === item.key
+                          ? 'bg-white/15 text-slate-50'
+                          : 'text-slate-200 hover:bg-white/5'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
                 </div>
 
-                <div className="space-y-2">
-                  <p className="text-xs uppercase tracking-[0.12em] text-slate-200 text-center md:text-left">Social - Writing - Code</p>
-                  <div className="grid gap-2 md:grid-cols-2">
-                    <div className="flex flex-col gap-2">
-                      <a href="https://x.com/CogniStark" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-xs text-slate-50 hover:border-white/30 hover:shadow transition">
-                        <X className="w-4 h-4 text-slate-100" />
-                        <span className="font-normal text-sm text-slate-50">𝕏/Twitter</span>
+                <div
+                  id="resources-panel"
+                  role="tabpanel"
+                  aria-labelledby={`${activeSection}-tab`}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-5 shadow-inner"
+                >
+                  {activeSection === 'workWithMe' && (
+                    <div className="grid gap-2 md:grid-cols-2">
+                      <a
+                        href="https://cal.com/cognistark/20min-call"
+                        className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition"
+                      >
+                        <div className="text-sm font-normal">Free Intro Call</div>
+                        <span className="text-xs text-slate-200/80">(AI Opportunity assessment)</span>
                       </a>
-                      <a href="https://www.linkedin.com/in/nicko-stark-37a688394" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-xs text-slate-50 hover:border-white/30 hover:shadow transition">
-                        <Linkedin className="w-4 h-4 text-slate-100" />
-                        <span className="font-normal text-sm text-slate-50">LinkedIn</span>
+                      <a
+                        href="https://senja.io/p/nickostark/y6CFdg"
+                        className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition"
+                      >
+                        <MessageSquare className="w-4 h-4 text-slate-100" />
+                        <div className="text-sm font-normal">Testimonials</div>
                       </a>
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <a href="https://nickostark.substack.com" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-xs text-slate-50 hover:border-white/30 hover:shadow transition">
-                        <Mail className="w-4 h-4 text-slate-100" />
-                        <span className="font-normal text-sm text-slate-50">Newsletter</span>
-                      </a>
-                      <a href="https://github.com/nickostark" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-xs text-slate-50 hover:border-white/30 hover:shadow transition">
-                        <Github className="w-4 h-4 text-slate-100" />
-                        <span className="font-normal text-sm text-slate-50">GitHub</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                  )}
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <p className="text-xs uppercase tracking-[0.12em] text-slate-200 text-center md:text-left">Apps</p>
-                    <div className="grid gap-2">
-                      <a href="https://huggingface.co/spaces/nickostark/xdash" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
+                  {activeSection === 'social' && (
+                    <div className="grid gap-2 md:grid-cols-2">
+                      <div className="flex flex-col gap-2">
+                      <a
+                          href="https://nickostark.substack.com"
+                          className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-xs text-slate-50 hover:border-white/30 hover:shadow transition"
+                        >
+                          <Mail className="w-4 h-4 text-slate-100" />
+                          <span className="font-normal text-sm text-slate-50">Newsletter</span>
+                        </a>
+                        <a
+                          href="https://www.linkedin.com/in/nicko-stark-37a688394"
+                          className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-xs text-slate-50 hover:border-white/30 hover:shadow transition"
+                        >
+                          <Linkedin className="w-4 h-4 text-slate-100" />
+                          <span className="font-normal text-sm text-slate-50">LinkedIn</span>
+                        </a>
+                      </div>
+                      <div className="flex flex-col gap-2">
+                        <a
+                          href="https://github.com/nickostark"
+                          className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-xs text-slate-50 hover:border-white/30 hover:shadow transition"
+                        >
+                          <Github className="w-4 h-4 text-slate-100" />
+                          <span className="font-normal text-sm text-slate-50">GitHub</span>
+                        </a>
+                        <a
+                          href="https://x.com/CogniStark"
+                          className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2 text-xs text-slate-50 hover:border-white/30 hover:shadow transition"
+                        >
+                          <X className="w-4 h-4 text-slate-100" />
+                          <span className="font-normal text-sm text-slate-50">𝕏/Twitter</span>
+                        </a>
+                      </div>
+                    </div>
+                  )}
+
+                  {activeSection === 'apps' && (
+                    <div className="grid gap-1">
+                      <a
+                        href="https://starkscan.cognistark.com"
+                        className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition"
+                      >
+                        StarkScan <span className="text-xs text-slate-200/80">(Operational inefficiency estimator)</span>
+                      </a>
+                      <a
+                        href="https://huggingface.co/spaces/nickostark/xdash"
+                        className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition"
+                      >
                         <div className="text-sm font-normal">
                           𝕏Dash <span className="text-xs text-slate-200/80">(𝕏 Analytics Interactive Dashboard)</span>
                         </div>
                       </a>
-                      <a href="https://starkscan.cognistark.com" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
-                        StarkScan
-                        {/* <span className="text-xs text-slate-200/80">(Coming soon...)</span> */}
+                      <a
+                        href="https://www.canva.com/design/DAG8KSK5lyc/NuAiCZkRxeRZ8JIoPKebWQ/watch?utm_content=DAG8KSK5lyc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h432e1255f0"
+                        className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition"
+                      >
+                        Wardrobe ai <span className="text-xs text-slate-200/80">(Outfit Recommender - Demo)</span>
                       </a>
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-xs uppercase tracking-[0.12em] text-slate-200 text-center md:text-left">Playbooks</p>
+                  )}
+
+                  {activeSection === 'resources' && (
                     <div className="grid gap-2">
-                      <a href="https://sage-party-f46.notion.site/Welcome-d156d6d997544fee9b7b97c250be62a3" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-9 text-slate-50 hover:border-white/30 hover:shadow-md transition">
+                      <a
+                        href="https://sage-party-f46.notion.site/Welcome-d156d6d997544fee9b7b97c250be62a3"
+                        className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition"
+                      >
                         <div className="text-sm font-normal">
-                          SANE <span className="text-xs text-slate-200/80">(AI Response Verification Prompts)</span>
+                          SANE <span className="text-xs text-slate-200/80">(AI Response Verification Playbook)</span>
                         </div>
                       </a>
-                      {/* <a href="#" className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition">
+                      <a
+                        href="https://github.com/nickostark/prompt-vault"
+                        className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition"
+                      >
                         <div className="text-sm font-normal">
-                          XFactor <span className="text-xs text-slate-200/80">(Playbook)</span>
+                          PROMPT VAULT <span className="text-xs text-slate-200/80">(Tested Prompt Templates)</span>
                         </div>
-                      </a> */}
+                      </a>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
