@@ -240,7 +240,7 @@ function App() {
                     { key: 'workWithMe', label: 'WORK WITH ME' },
                     { key: 'social', label: 'FOLLOW MY WORK' },
                     { key: 'apps', label: 'APPS' },
-                    { key: 'resources', label: 'FREE RESOURCES' },
+                    { key: 'resources', label: 'PLAYBOOKS & STUFF' },
                   ] as const).map((item) => (
                     <button
                       key={item.key}
@@ -326,6 +326,12 @@ function App() {
 
                   {activeSection === 'apps' && (
                     <div className="grid gap-1">
+                      <a
+                        href="https://roi-calculator.cognistark.com"
+                        className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition"
+                      >
+                        ROI Calculator <span className="text-xs text-slate-200/80"></span>
+                      </a>
                       <a
                         href="https://starkscan.cognistark.com"
                         className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition"
