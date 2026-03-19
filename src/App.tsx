@@ -373,6 +373,14 @@ function App() {
                           PROMPT VAULT <span className="text-xs text-slate-200/80">(Tested Prompt Templates)</span>
                         </div>
                       </a>
+                      <a
+                        href="https://amused-germanium-417.notion.site/Factor-Beat-The-Algo-3f1f561f79b94ec3890c9d1072c38afe"
+                        className="inline-flex min-w-[170px] items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-slate-50 hover:border-white/30 hover:shadow-md transition"
+                      >
+                        <div className="text-sm font-normal">
+                          𝕏FACTOR <span className="text-xs text-slate-200/80">(Practical breakdown of the 𝕏 algorithm)</span>
+                        </div>
+                      </a>
                     </div>
                   )}
                 </div>
